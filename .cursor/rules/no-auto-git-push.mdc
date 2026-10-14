@@ -1,0 +1,15 @@
+---
+description: Do not push Git proactively; push only when the user explicitly asks / 禁止主动推送 Git；仅在用户明确要求时 push
+alwaysApply: true
+---
+
+# Git push / Git 推送
+
+- Do **not** run `git push` (including `--force` / `-u`) proactively.
+- **不要主动**执行 `git push`（含 `--force` / `-u`）。
+- Push only when the user clearly says push / 推送 / 提交并推送, etc.
+- 仅当用户明确说「推送」「push」「提交并推送」等时才推送到远程。
+- If the user only says commit / 提交: create a local commit only; wait before push.
+- 用户只说「提交 / commit」时：只做本地 commit，推送前先确认或等用户再说。
+- After finishing work, stop locally by default; push only on user request.
+- 完成功能后默认停在本地；需要推送时由用户下达指令。

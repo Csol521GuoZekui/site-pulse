@@ -1,0 +1,23 @@
+name: Prune GHCR Images
+
+on:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: site-pulse
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      # Keep newest multi-arch set (~1 tagged index + untagged platform digests).
+      - name: Keep newest complete image set
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: ${{ env.IMAGE_NAME }}
+          package-type: container
+          min-versions-to-keep: 5
+          delete-only-untagged-versions: false

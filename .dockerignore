@@ -1,0 +1,13 @@
+.git
+.github
+.gitignore
+*.md
+docs
+server/local
+node_modules
+web/node_modules
+web/dist
+npm-debug.log*
+.env
+.env.*
+.DS_Store
